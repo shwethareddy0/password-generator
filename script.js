@@ -15,14 +15,34 @@ generateBtn.addEventListener("click", writePassword);
 //It generates password based on the user selected criteria and returns the result.
 function generatePassword() {
   //Variable declared for password length., lowercase, uppercase, numeric and special characters.
-  var passwordLength = prompt(
+  /*var passwordLength = prompt(
     "Password must be at least 8 characters and no more than 128 characters."
-  );
+  );*/
+
+  //If statement to evaluate the user selected password length.
+  //Alert ,when selected password length is less than 8 characters and more than 128 characters.
+  do {
+    var passwordLength = prompt(
+      "Password must be at least 8 characters and no more than 128 characters."
+    );
+
+    if (passwordLength < 8 || passwordLength > 128) {
+      alert(
+        "Password must be at least 8 characters and no more than 128 characters."
+      );
+    }
+  } while (passwordLength < 8 || passwordLength > 128);
 
   //Variables declared for lowercase, uppercase, numeric and special characters.
   //Stores user selection to be included in the password.
-  var lowerCase = confirm("Do you want lowercase characters?");
-  var upperCase = confirm("Do you want uppercase characters?");
+  do {
+    var lowerCase = confirm("Do you want lowercase characters?");
+    var upperCase = confirm("Do you want uppercase characters?");
+    if (lowerCase !== true && upperCase !== true) {
+      alert("Password must have at least one character.");
+    }
+  } while (lowerCase !== true && upperCase !== true);
+
   var numeric = confirm("Do you want numeric characters?");
   var specialCharacters = confirm("Do you want special characters?");
 
@@ -43,6 +63,7 @@ function generatePassword() {
   do {
     //If Statement
     //Evaluates to true so the uppercase is generated.
+
     if (upperCase) {
       upperCaseCharacter = upperCaseCharSet.charAt(
         Math.floor(Math.random() * upperCaseCharSet.length)
