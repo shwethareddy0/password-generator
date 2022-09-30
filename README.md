@@ -2,7 +2,7 @@
 
 ## Description
 
-Password Generator is an application that a user can use to generate a random password based on criteria they have selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code. It has a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
+Password Generator is an application that a user can use to generate a random password based on criteria they have selected. This app will run in the browser and will feature dynamically updated HTML and powered by JavaScript code. It has a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
 
 Here is the link to the deployed application
 
@@ -33,7 +33,7 @@ This project can be used in any web browser or on any devices including the mobi
 
 The following image is the demo screenshot of the deployed application.
 
-![Demo screenshot]()
+![Demo screenshot](./images/password-generator-demo.gif)
 
 Following is a code snippet of the application page.
 
@@ -75,4 +75,4 @@ do {
 
 ## License
 
-This project is licensed under the [MIT](LICENSE.txt) license.
+This project is licensed under the [MIT](./LICENSE) license.
