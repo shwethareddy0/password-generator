@@ -4,13 +4,13 @@
 
 Password Generator is an application that a user can use to generate a random password based on criteria they have selected. This app will run in the browser and will feature dynamically updated HTML and powered by JavaScript code. It has a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
 
-Here is the link to the deployed application
+Here is the link to the [deployed application] (https://shwethareddy0.github.io/password-generator/)
 
 ### Features
 
 - Fully Responsive
 - Easy to modify
-- Supports HTML5,CSS3 & JavaScript
+- Supports HTML5, CSS3 & JavaScript
 
 ## Table of Contents
 
