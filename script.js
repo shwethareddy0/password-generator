@@ -33,7 +33,10 @@ function generatePassword() {
   var specialCharSet = " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
   // if user confirms the selection of the lowercase, then include lowercase characters in the password else move to the next set of characters.
-
+  var upperCaseCharacter = "";
+  var lowerCaseCharacter = "";
+  var numericCharacter = "";
+  var specialCharacter = "";
   var result = "";
 
   do {
