@@ -5,23 +5,23 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+//Generate password prompts and confirms the series of password criteria.
+//It generates password based on the user selected criteria and returns the result.
 function generatePassword() {
+  //Variable declared for password length., lowercase, uppercase, numeric and special characters.
   var passwordLength = prompt(
     "Password must be at least 8 characters and no more than 128 characters."
   );
 
-  //declare the variables for length, lowercase, uppercase, numeric and spl chars
-  //confirm whether or not lowercase charachters are included.
+  //Variables declared for lowercase, uppercase, numeric and special characters.
+  //Stores user selection to be included in the password.
   var lowerCase = confirm("Do you want lowercase characters?");
-  //If the user doesnot want a loercase, remove the lowercase charachters set from the password.
-  //
   var upperCase = confirm("Do you want uppercase characters?");
   var numeric = confirm("Do you want numeric characters?");
   var specialCharacters = confirm("Do you want special characters?");
@@ -32,44 +32,60 @@ function generatePassword() {
   var numericSet = "0123456789";
   var specialCharSet = " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
-  // if user confirms the selection of the lowercase, then include lowercase characters in the password else move to the next set of characters.
+  //Initialising the variables to store the characters generated in the loop.
   var upperCaseCharacter = "";
   var lowerCaseCharacter = "";
   var numericCharacter = "";
   var specialCharacter = "";
   var result = "";
 
+  // Do...While statement
   do {
-    if (upperCase === true) {
+    //If Statement
+    //Evaluates to true so the uppercase is generated.
+    if (upperCase) {
       upperCaseCharacter = upperCaseCharSet.charAt(
         Math.floor(Math.random() * upperCaseCharSet.length)
       );
     }
-    if (lowerCase === true) {
+    //If Statement
+    //Evaluates to true so the lowercase is generated.
+    if (lowerCase) {
       lowerCaseCharacter = lowerCaseCharSet.charAt(
         Math.floor(Math.random() * lowerCaseCharSet.length)
       );
     }
-    if (numeric === true) {
+    //If Statement
+    //Evaluates to true so the numeric is generated.
+    if (numeric) {
       numericCharacter = numericSet.charAt(
         Math.floor(Math.random() * numericSet.length)
       );
     }
-    if (specialCharacters === true) {
+    //If Statement
+    //Evaluates to true so the special character is generated.
+    if (specialCharacters) {
       specialCharacter = specialCharSet.charAt(
         Math.floor(Math.random() * specialCharSet.length)
       );
     }
+    //Concatenate the generated charasters in to a variable.
     var midResult =
       lowerCaseCharacter +
       upperCaseCharacter +
       numericCharacter +
       specialCharacter;
-    result = result + midResult;
-  } while (result.length < passwordLength);
-  result = result.substring(0, passwordLength);
-  return result;
-  console.log(result);
-}
 
-//var passwordCriteria = prompt();
+    //Added to the previuosly generated password
+    result = result + midResult;
+
+    //Iterate until the generated password length  is equal or exceeds the user selected password length.
+  } while (result.length < passwordLength);
+
+  //If the generated password length exceeds the user selected password length, then this will remove the extra characters.
+  result = result.substring(0, passwordLength);
+
+  console.log(result);
+  //return the result to the parent function.
+  return result;
+}
