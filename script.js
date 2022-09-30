@@ -16,11 +16,15 @@ function generatePassword() {
   var passwordLength = prompt(
     "Password must be at least 8 characters and no more than 128 characters."
   );
+
+  //declare the variables for length, lowercase, uppercase, numeric and spl chars
+
   var lowerCase = confirm("Do you want lowercase characters?");
   var upperCase = confirm("Do you want uppercase characters?");
   var numeric = confirm("Do you want numeric characters?");
   var specialCharacters = confirm("Do you want special characters?");
 
+  //Assign possible characters sets to the variables.
   var lowerCaseCharSet = "abcdefghijklmnopqrstuvwxyz";
   var upperCaseCharSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var numericSet = "0123456789";
@@ -50,23 +54,4 @@ function generatePassword() {
   console.log(result);
 }
 
-// function closing
-
 //var passwordCriteria = prompt();
-
-//declare the variables for length, lowercase, uppercase, numeric and spl chars
-
-/*prompts to select the password criteria.
-prompt for the length of the password
-when prompted - choose  the length min8 - max128 characters
-confirm  to include or not - lowercase,
-confirm  to include or not - uppercase,
-confirm  to include or not - numeric,
-confirm  to include or not - special characters
-when prompt is answered - input should atleast select one character type
-when all prompts are answered - password is generated with matching criteria
-pwd is either displayed in alert or written to the page.
-pseudo code
-series of prompts for password criteria.
-ask the user about the length - and take the input
-ask the user about the lowercase.*/
