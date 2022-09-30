@@ -36,8 +36,24 @@ The following image is the demo screenshot of the deployed application.
 ![Demo screenshot]()
 
 Following is a code snippet of the application page.
+Here it refers to the Do...While statement which evaluates the user selected password length, which is one of the selection criterias.
 
 ```html5
+
+do {
+    //Variable declared for password length.
+    var passwordLength = prompt(
+      "Password must be at least 8 characters and no more than 128 characters."
+    );
+
+    //If statement to validate the password length criteria.
+    if (passwordLength < 8 || passwordLength > 128) {
+      //Alert when length criteria is not met.
+      alert(
+        "Password must be at least 8 characters and no more than 128 characters."
+      );
+    }
+  } while (passwordLength < 8 || passwordLength > 128);
 
 
 ```
